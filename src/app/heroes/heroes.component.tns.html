@@ -1,0 +1,20 @@
+<StackLayout style="padding: 0px">
+    <Label text="Available heroes:"></Label>
+    <StackLayout *ngIf="heroes.toString() === ''">
+        <Label text="There are no heroes here! Click below to add some!"></Label>
+    </StackLayout>
+
+    <StackLayout style="padding: 0px" *ngFor="let hero of heroes; index as i">
+        <StackLayout style="padding: 0px" *ngIf="hero">
+        <LinearLayout>
+            <Label text="{{ hero.name }}
+                         {{ hero.details}}
+                         {{ hero.id }}" textWrap="true"></Label>
+            <Button (click)="onDelete(i)" *ngIf="state === 'on'">X</Button>
+        </LinearLayout>
+        </StackLayout>
+    </StackLayout>
+
+    <button (click)="onModify()" *ngIf="heroes.toString() !== ''" text="{{ modifierTogglerText }}"></button>
+    <button (click)="onAdd()" text="Add Heroes!"></button>
+</StackLayout>

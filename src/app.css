@@ -1,0 +1,11 @@
+@import '~nativescript-theme-core/css/core.light.css';
+
+h1, h2, h3, label {
+    font-family: TravelingTypewriter;
+}
+
+StackLayout {
+    background-color: #909090;
+    padding: 35%;
+}
+

@@ -1,0 +1,18 @@
+.holder {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 0px;
+}
+
+tr {
+    cursor: pointer;
+}
+
+input {
+    font-family: Stylish;
+    font-size: 20px;
+    border: 0;
+    background-color: transparent;
+}

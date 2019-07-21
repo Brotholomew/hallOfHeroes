@@ -1,0 +1,40 @@
+<div class="container" style="padding: 0; justify-content: space-between; align-items: baseline">
+  <div class="vertical-container">
+    <div class="holder">
+      <h3 style="margin: 0;">Available heroes:</h3>
+      <button class="state-button" [style.color]="darkMode.darkState ? 'white' : 'black'" style="background-color: transparent; font-size: 20px; padding: 0; height: 30px; margin-top:7px; text-align: center;" (click)="onModify()" *ngIf="heroes.toString() !== ''"><i class="fas fa-cog"></i></button>
+    </div>
+    <div *ngIf="heroes.toString() === ''">
+      There are no heroes here! Click below to add some!
+    </div>
+    <table style="border-color:black; border: 10px">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>type</th>
+        <th>Details</th>
+      </tr>
+      <tr *ngFor="let hero of heroList.heroes; index as i" (click)="onSelect(i)">
+        <td class="id-td" [style.background-color]="darkMode.darkState ? '#cc6200' : '#3e5560'">{{ hero.id }}</td>
+        <td [style.background-color]="darkMode.darkState ? '#b5b5b5' : '#e3e9ec'">{{ hero.name }}</td>
+        <td [style.background-color]="darkMode.darkState ? '#b5b5b5' : '#e3e9ec'">{{ hero.type }}</td>
+        <td [style.background-color]="darkMode.darkState ? '#b5b5b5' : '#e3e9ec'">{{ hero.details }}</td>
+        <Button class="state-button" (click)="onDelete(i)" *ngIf="state === 'on'"><i class="fas fa-times"></i></Button>
+      </tr>
+      <tr>
+        <td style="border-top-left-radius: 5px; border-bottom-left-radius: 5px;" [style.background-color]="darkMode.darkState ? '#b5b5b5' : '#3e5560'"></td>
+        <td [style.background-color]="darkMode.darkState ? '#b5b5b5' : '#e3e9ec'"><input [(ngModel)]="newHero.name" placeholder="name" (keyup.enter)="onAdd()"/></td>
+        <td [style.background-color]="darkMode.darkState ? '#b5b5b5' : '#e3e9ec'"><input [(ngModel)]="newHero.type" placeholder="type" (keyup.enter)="onAdd()"></td>
+        <td [style.background-color]="darkMode.darkState ? '#b5b5b5' : '#e3e9ec'"><input [(ngModel)]="newHero.details" placeholder="details" (keyup.enter)="onAdd()"/></td>
+        <Button class="state-button" (click)="onAdd()"><i class="fas fa-plus"></i></Button>
+      </tr>
+    </table>
+    <app-modify style="margin-top:10px;" [hero]="selectedHero"></app-modify>
+  </div>
+  <div class="vertical-container" style="margin-left: 40px">
+    <h3 style="margin-top: 0; margin-bottom: 3px;">How this works?</h3>
+    <h2 style="margin-top: 0; margin-left: 10px; text-align: justify;">This is a platform where you can create various heroes and then put them through a skirmish. To generate a new character just fill in the last empty cells of the hero table and click the plus button next to it. Heroes' skills are generated automatically, hovewer you can alter them by clicking at the rescpective hero.</h2>
+    <h2 style="margin-top: 3px; margin-left: 10px; margin-bottom: 3px; text-align: justify;">Finished? Let's fight!</h2>
+    <Button style="margin-left: 10px" [routerLink]="['/armySelection']">Click here to enter the arena!</Button>
+  </div>
+</div>

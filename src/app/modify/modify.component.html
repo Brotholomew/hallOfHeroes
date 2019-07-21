@@ -1,0 +1,36 @@
+<div *ngIf="hero != undefined">
+  <div class="horizontal-container">
+    <h3>Editing {{ heroList.heroes[hero].name | uppercase }}</h3>
+    <button (click)="onFinish()" class="state-button" style="padding: 0; background-color: transparent; font-size: 20px; color: #008000"><i class="fas fa-check"></i></button>
+  </div>
+  <table>
+    <tr>
+      <td class="id-td" [style.background-color]="darkMode.darkState ? '#cc6200' : '#3e5560'">name: </td>
+      <td class="end-td" [style.background-color]="darkMode.darkState ? '#b5b5b5' : '#e3e9ec'"><input class="end-td" [(ngModel)]="heroList.heroes[hero].name"/> </td>
+    </tr>
+    <tr>
+      <td class="id-td" [style.background-color]="darkMode.darkState ? '#cc6200' : '#3e5560'">type:</td>
+      <td class="end-td" [style.background-color]="darkMode.darkState ? '#b5b5b5' : '#e3e9ec'"><input class="end-td" [(ngModel)]="heroList.heroes[hero].type"/> </td>
+    </tr>
+    <tr>
+        <td class="id-td" [style.background-color]="darkMode.darkState ? '#cc6200' : '#3e5560'">details:</td>
+        <td class="end-td" [style.background-color]="darkMode.darkState ? '#b5b5b5' : '#e3e9ec'"><input class="end-td" [(ngModel)]="heroList.heroes[hero].details"/> </td>
+    </tr>
+    <tr>
+          <td class="id-td" [style.background-color]="darkMode.darkState ? '#cc6200' : '#3e5560'">wisdom:</td>
+          <td class="end-td" [style.background-color]="darkMode.darkState ? '#b5b5b5' : '#e3e9ec'"><input class="end-td" [(ngModel)]="heroList.heroes[hero].wisdom"/> </td>
+    </tr>
+    <tr>
+        <td class="id-td" [style.background-color]="darkMode.darkState ? '#cc6200' : '#3e5560'">might:</td>
+        <td class="end-td" [style.background-color]="darkMode.darkState ? '#b5b5b5' : '#e3e9ec'"><input class="end-td" [(ngModel)]="heroList.heroes[hero].might"/> </td>
+    </tr>
+    <tr>
+        <td class="id-td" [style.background-color]="darkMode.darkState ? '#cc6200' : '#3e5560'">magic:</td>
+        <td class="end-td" [style.background-color]="darkMode.darkState ? '#b5b5b5' : '#e3e9ec'"><input class="end-td" [(ngModel)]="heroList.heroes[hero].magic"/> </td>
+    </tr>
+    <tr>
+        <td class="id-td" [style.background-color]="darkMode.darkState ? '#cc6200' : '#3e5560'">health:</td>
+        <td class="end-td" [style.background-color]="darkMode.darkState ? '#b5b5b5' : '#e3e9ec'"><input class="end-td" [(ngModel)]="heroList.heroes[hero].health"/> </td>
+    </tr>
+  </table>
+</div>

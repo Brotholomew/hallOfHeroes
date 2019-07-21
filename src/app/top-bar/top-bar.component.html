@@ -1,0 +1,4 @@
+<div class="container" [style.background-color]="service.darkState ? '#cc6200' : '#5c8193'">
+    <a>{{ titleService.title }}</a>
+    <Button [style.color]="service.darkState ? 'white' : 'black'" (click)="onDarkMode()"><i class="fas fa-moon"></i></Button>
+</div>

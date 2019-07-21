@@ -1,0 +1,18 @@
+<div class="container" style="margin-top:7px">
+  <div class="vertical-container" style="margin-top:0">
+    <div class="container">
+      <select>
+        <option value="" disabled>please select a hero!</option>
+        <option *ngFor="let hero of heroList.heroes, index as i">{{ hero.name }}</option>
+      </select>
+      <input type="text" [formControl]="heroForm"/>
+    </div>
+    <table>
+      <tr *ngFor="let hero of heroList.userArmy, index as i">
+        <td class="id-td">selected</td>
+        <td>{{ hero.name }}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+  

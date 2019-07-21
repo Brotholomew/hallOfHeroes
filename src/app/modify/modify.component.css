@@ -1,0 +1,17 @@
+input {
+    font-family: Stylish;
+    font-size: 20px;
+    border: 0;
+    background-color: transparent;
+}
+
+.end-td {
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.horizontal-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
