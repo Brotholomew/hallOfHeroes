@@ -79,7 +79,7 @@ module.exports = ".title {\r\n    padding: 0px;\r\n    margin-top: 0px;\r\n    m
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-container\">\r\n    <a class=\"title-container\" [routerLink]=\"['/home']\">\r\n        <div style=\"margin: 0; padding: 0; text-align: right;\">\r\n            <h3 class=\"title\">Hall of</h3>\r\n            <h3 class=\"title\">Heroes</h3>\r\n        </div>\r\n        <img src=\"../assets/pathenon.png\" style=\"height: 90%; width: auto; object-fit: contain; margin: 0; flex-basis: 0; display: flexbox\"/>\r\n    </a>\r\n    <div class=\"center\" [style.background-color]=\"color.darkState ? '#000000' : '#7d9eae'\">\r\n        <app-top-bar></app-top-bar>\r\n        <div class=\"container\" style=\"margin:0; padding-top:0;\">\r\n            <router-outlet></router-outlet>\r\n        </div>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"main-container\">\r\n    <a class=\"title-container\" [routerLink]=\"['/home']\">\r\n        <div style=\"margin: 0; padding: 0; text-align: right;\">\r\n            <h3 class=\"title\">Hall of</h3>\r\n            <h3 class=\"title\">Heroes</h3>\r\n        </div>\r\n        <img src=\"assets/pathenon.png\" style=\"height: 90%; width: auto; object-fit: contain; margin: 0; flex-basis: 0; display: flexbox\"/>\r\n    </a>\r\n    <div class=\"center\" [style.background-color]=\"color.darkState ? '#000000' : '#7d9eae'\">\r\n        <app-top-bar></app-top-bar>\r\n        <div class=\"container\" style=\"margin:0; padding-top:0;\">\r\n            <router-outlet></router-outlet>\r\n        </div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
