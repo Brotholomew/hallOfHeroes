@@ -15,9 +15,9 @@ export class HeroesComponent implements OnInit {
   selectedHero: number;
 
   constructor(
-    private titleService: TitleServiceService,
-    private heroList: HeroListService,
-    private darkMode: DarkModeService,
+    public titleService: TitleServiceService,
+    public heroList: HeroListService,
+    public darkMode: DarkModeService,
   ) {}
 
   heroes = this.heroList.heroes;

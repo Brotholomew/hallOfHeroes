@@ -9,8 +9,8 @@ import { TitleServiceService } from '../title-service.service';
 })
 export class TopBarComponent implements OnInit {
   constructor(
-    private service: DarkModeService,
-    private titleService: TitleServiceService) { }
+    public service: DarkModeService,
+    public titleService: TitleServiceService) { }
   ngOnInit() {
   }
 
