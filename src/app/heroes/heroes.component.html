@@ -2,7 +2,8 @@
   <div class="vertical-container">
     <div class="holder">
       <h3 style="margin: 0;">Available heroes:</h3>
-      <button class="state-button" [style.color]="darkMode.darkState ? 'white' : 'black'" style="background-color: transparent; font-size: 20px; padding: 0; height: 30px; margin-top:7px; text-align: center;" (click)="onModify()" *ngIf="heroes.toString() !== ''"><i class="fas fa-cog"></i></button>
+      <button class="state-button" [style.color]="darkMode.darkState ? 'white' : 'black'" style="background-color: transparent; font-size: 20px; padding: 0; height: 30px; margin-top:7px; text-align: center;" (click)="onModify()" *ngIf="heroes.toString() !== '' && state === 'off'"><i class="fas fa-cog"></i></button>
+      <button (click)="onModify()" class="state-button" style="padding: 0; background-color: transparent; font-size: 20px; color: #008000" *ngIf="heroes.toString() !== '' && state === 'on'"><i class="fas fa-check"></i></button>
     </div>
     <div *ngIf="heroes.toString() === ''">
       There are no heroes here! Click below to add some!

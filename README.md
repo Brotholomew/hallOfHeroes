@@ -2,6 +2,8 @@
 
 This is one of my first [Angular](https://angular.io/) (combined with [Nativescript]()) projects :p . It is still not finished! The purpose of the whole undertaking is to build an app which works natively on the web and mobile devices. It is designed to have an editable list of heroes who will later fight with each other on the arena. 
 
+Preview [here](https://brotholomew.github.io/hallOfHeroes/home)!
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for testing purposes.

@@ -124,3 +124,9 @@ tr:hover {
     display: flex;
     flex-direction: column;
 }
+
+.title-container {
+    padding: 20px;
+    margin: 17px;
+    margin-bottom: 0;
+}

@@ -16,7 +16,7 @@ export class TopBarComponent implements OnInit {
 
   onDarkMode() {
     if (this.service.darkState === false) {
-      document.querySelector('body').style.cssText = 'background-image: linear-gradient(to top, #808080, #000000)';
+      document.querySelector('body').style.cssText = 'background-image: linear-gradient(to bottom, #485563, #29323c)';
       this.service.darkState = true;
     } else {
       document.querySelector('body').style.cssText = 'background-image: linear-gradient(to bottom, #b0c4de, #e4b7b5)';

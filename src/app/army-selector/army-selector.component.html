@@ -1,18 +1,63 @@
-<div class="container" style="margin-top:7px">
-  <div class="vertical-container" style="margin-top:0">
-    <div class="container">
-      <select>
-        <option value="" disabled>please select a hero!</option>
-        <option *ngFor="let hero of heroList.heroes, index as i">{{ hero.name }}</option>
-      </select>
-      <input type="text" [formControl]="heroForm"/>
+<div class="title-container">
+  <h2 style="text-align: justify; margin-bottom: 10px;" >Here, you are able to choose which heroes will fight in your and your adversary's army! You can either do it yourself, or randomize the warriors. You won't be able to edit the list later, so choose wisely!</h2>
+</div>
+<div class="container" style="margin-top:0; padding-top:0;">
+  <div class="vertical-container" style="margin-top:0; margin-right: 10px; width:50%">
+    <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: baseline; width: 90%; margin-bottom: 0">
+      <h3 style="margin-bottom: 10px" >Your army:</h3>
+      <button class="state-button" [style.color]="darkMode.darkState ? 'white' : 'black'" style="background-color: transparent; font-size: 20px; padding: 0; height: 30px; margin-top:7px; text-align: center;" (click)="userState = true" *ngIf="heroList.userArmy.toString() !== '' && userState === false"><i class="fas fa-cog"></i></button>
+      <button (click)="userState = false" class="state-button" style="padding: 0; background-color: transparent; font-size: 20px; color: #008000" *ngIf="heroList.userArmy.toString() !== '' && userState === true"><i class="fas fa-check"></i></button>
     </div>
     <table>
+      <tr>
+        <td class="id-td" [style.background-color]="darkMode.darkState ? '#cc6200' : '#3e5560'">Add hero:</td>
+        <td class="list-holder" [style.background-color]="darkMode.darkState ? '#b5b5b5' : '#e3e9ec'">
+          <select [formControl]="heroChoice" [style.background-color]="darkMode.darkState ? '#b5b5b5' : '#e3e9ec'" style="width: 100%">
+            <option value="" disabled>select a hero!</option>
+            <option *ngFor="let hero of heroList.heroes, index as i" value={{i}}>{{ hero.name }}</option>
+          </select>
+        </td>  
+        <td valign="top" class="list-holder" style="background-color: transparent;">
+          <button class="state-button" style="padding:5px; font-size:10px; height: 32px" type="submit" (click)="onSelect()"><i class="fas fa-plus"></i></button>
+        </td>
+      </tr>
       <tr *ngFor="let hero of heroList.userArmy, index as i">
-        <td class="id-td">selected</td>
-        <td>{{ hero.name }}</td>
+        <td class="id-td" [style.background-color]="darkMode.darkState ? '#cc6200' : '#3e5560'">selected</td>
+        <td [style.background-color]="darkMode.darkState ? '#b5b5b5' : '#e3e9ec'">{{ hero.name }}</td>
+        <Button class="delete-button" style="height: 28px; font-size: 15px" (click)="onDelete(i)" *ngIf="userState === true"><i class="fas fa-times"></i></Button>
       </tr>
     </table>
   </div>
+  <div class="vertical-container" style="margin-top:0; width:50%; ">
+      <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: baseline; width:90%; margin-bottom: 0">
+        <h3 style="margin-bottom: 10px" >PC's army:</h3>
+        <button class="state-button" [style.color]="darkMode.darkState ? 'white' : 'black'" style="background-color: transparent; font-size: 20px; padding: 0; height: 30px; margin-top:7px; text-align: center;" (click)="pcState = true" *ngIf="heroList.pcArmy.toString() !== '' && pcState === false"><i class="fas fa-cog"></i></button>
+        <button (click)="pcState = false" class="state-button" style="padding: 0; background-color: transparent; font-size: 20px; color: #008000" *ngIf="heroList.pcArmy.toString() !== '' && pcState === true"><i class="fas fa-check"></i></button>
+      </div>
+      <table>
+        <tr>
+          <td class="id-td" [style.background-color]="darkMode.darkState ? '#cc6200' : '#3e5560'">Add hero:</td>
+          <td class="list-holder" [style.background-color]="darkMode.darkState ? '#b5b5b5' : '#e3e9ec'">
+            <select [formControl]="heroChoice" [style.background-color]="darkMode.darkState ? '#b5b5b5' : '#e3e9ec'" style="width: 100%">
+              <option value="" disabled>select a hero!</option>
+              <option *ngFor="let hero of heroList.heroes, index as i" value={{i}}>{{ hero.name }}</option>
+            </select>
+          </td>  
+          <td valign="top" class="list-holder" style="background-color: transparent;">
+            <button class="state-button" style="padding:5px; font-size:10px; height: 32px" type="submit" (click)="onSelect()"><i class="fas fa-plus"></i></button>
+          </td>
+        </tr>
+        <tr *ngFor="let hero of heroList.pcArmy, index as i">
+          <td class="id-td" [style.background-color]="darkMode.darkState ? '#cc6200' : '#3e5560'">selected</td>
+          <td [style.background-color]="darkMode.darkState ? '#b5b5b5' : '#e3e9ec'">{{ hero.name }}</td>
+          <Button class="delete-button" style="height: 28px; font-size: 15px" (click)="this.heroList.onPcArmyDelete(i)" *ngIf="pcState === true"><i class="fas fa-times"></i></Button>
+        </tr>
+      </table>
+    </div>
 </div>
+<div style="display: flex; flex-direction: row; justify-content: center; margin-bottom: 10px;">
+    <input class="random-holder" [(ngModel)]="randomNumber" (keyup.enter)="onRandomize()" [style.background-color]="darkMode.darkState ? '#b5b5b5' : '#e3e9ec'"  placeholder="How many heroes?" />
+    <button class="random-button" (click)="onRandomize()">Randomize!</button>
+    <button class="fight-button" (click)="onFight()">Fight!</button>
+  </div>
   
