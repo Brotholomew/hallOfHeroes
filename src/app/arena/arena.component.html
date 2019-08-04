@@ -1,1 +1,16 @@
-<p *ngFor="let hero of queue, index as i">{{ hero.name }}</p>
+<div class="vertical-container">
+  <div class="container">
+    <table>
+      <tr *ngFor="let hero of this.heroList.userArmy, index as i">
+        <td class="life" [style.background-color]="hero.health > 0 ? '#49b675' : '#a91d39'" ><i *ngIf="hero.health < 0" class="fas fa-skull"></i><i *ngIf="hero.health > 0" class="fas fa-heartbeat"></i>: {{ hero.health }}</td>
+        <td>{{ hero.name }}</td>
+      </tr>
+    </table>
+    <table>
+
+    </table>
+    <table>
+
+    </table>
+  </div>
+</div>
